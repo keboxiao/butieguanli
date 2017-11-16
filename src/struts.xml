@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<action name="get" class="com.action.TuserAction" method="getById">
+		</action>
+
+		<action name="getbalance" class="com.action.TuserAction"
+			method="getBalance">
+		</action>
+
+		<action name="search" class="com.action.YuangongAction" method="getById">
+		</action>
+
+		<action name="xiaofei" class="com.action.XiaofeiAction" method="xiaofei">
+		</action>
+
+		<action name="firmshow" class="com.action.FirmAction" method="showAll">
+		</action>
+
+		<action name="addfirm" class="com.action.FirmAction" method="add">
+		</action>
+
+		<action name="firmsearch" class="com.action.FirmAction" method="firmShow">
+		</action>
+
+		<action name="xiaofeishow" class="com.action.XiaofeiAction"
+			method="xiaofeishow">
+		</action>
+
+		<action name="usershow" class="com.action.TuserAction" method="userShow">
+		</action>
+
+		<action name="edit" class="com.action.TuserAction" method="edit">
+		</action>
+
+		<action name="shenqingshow" class="com.action.XiaofeiAction"
+			method="shenqingshow">
+		</action>
+
+		<action name="shenheshow" class="com.action.XiaofeiAction"
+			method="shenheshow">
+		</action>
+
+		<action name="shenhe" class="com.action.XiaofeiAction" method="shenhe">
+		</action>
+
+		<action name="submit" class="com.action.XiaofeiAction" method="submit">
+		</action>
+
+		<action name="remove" class="com.action.XiaofeiAction" method="remove">
+		</action>
+
+		<action name="rollback" class="com.action.XiaofeiAction"
+			method="rollback">
+		</action>
+
+		<action name="login" class="com.action.TuserAction" method="login">
+			<result name="success">main.jsp</result>
+			<result name="login">index.jsp</result>
+		</action>
+
+		<action name="logout" class="com.action.TuserAction" method="logout">
+			<result name="success">index.jsp</result>
+		</action>
+
+		<action name="uploadfafang" class="com.action.XiaofeiAction"
+			method="upload">
+			<param name="savePath">D:\butieupload</param>
+			<result name="success">upload.jsp?updatesuccess=1</result>
+			<result name="error">upload.jsp?updatesuccess=2</result>
+		</action>
+
+		<action name="uploaduser" class="com.action.TuserAction"
+			method="upload">
+			<param name="savePath">D:\butieupload</param>
+			<result name="success">userupload.jsp?updatesuccess=1</result>
+			<result name="error">userupload.jsp?updatesuccess=2</result>
+		</action>
+
+		<action name="daochu" class="com.action.XiaofeiAction" method="daochu">
+			<param name="savePath">D:\butiedownload\duizhangdan.xls</param>
+			<!-- 下载导出excle -->
+			<result name="excel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+				<param name="inputName">excelFile</param>
+			</result>
+		</action>
+
+		<action name="daochuuser" class="com.action.TuserAction"
+			method="daochu">
+			<param name="savePath">D:\butiedownload\userlist.xls</param>
+			<!-- 下载导出excle -->
+			<result name="excel" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+				<param name="inputName">excelFile</param>
+			</result>
+		</action>
+
+		<action name="updatepass" class="com.action.TuserAction"
+			method="updatepass">
+			<result name="success">updatepsw.jsp?updatesuccess=1</result>
+			<result name="error">updatepsw.jsp?updatesuccess=2</result>
+		</action>
+
+	</package>
+
+	<constant name="struts.objectFactory.spring.autoWire" value="name" />
+
+</struts>

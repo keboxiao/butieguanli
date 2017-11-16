@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="butieguanli"
+  id="myeclipse.1495868323562"
+  context-root="/butieguanli"
+  j2ee-spec="5.0"
+  archive="butieguanli.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
